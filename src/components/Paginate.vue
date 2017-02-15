@@ -118,26 +118,31 @@ export default {
     }
   },
   methods: {
-    handlePageSelected (selected) {
+    handlePageSelected (selected, callback = false) {
       if (this.selected === selected) return
 
       this.selected = selected
 
-      this.clickHandler(this.selected + 1)
+      if(callback){
+        this.clickHandler(this.selected + 1)
+      }
     },
-    prevPage () {
+    prevPage (callback = false) {
       if (this.selected <= 0) return
 
       this.selected --
 
-      this.clickHandler(this.selected + 1)
+      if(callback){
+        this.clickHandler(this.selected + 1)
+      }
     },
-    nextPage () {
+    nextPage (callback = false) {
       if (this.selected >= this.pageCount - 1) return
 
       this.selected ++
-
-      this.clickHandler(this.selected + 1)
+      if(callback){
+        this.clickHandler(this.selected + 1)
+      }
     }
   }
 }
