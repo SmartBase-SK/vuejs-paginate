@@ -118,7 +118,7 @@ export default {
     }
   },
   methods: {
-    handlePageSelected (selected, callback = false) {
+    handlePageSelected (selected, callback = true) {
       if (this.selected === selected) return
 
       this.selected = selected
@@ -127,7 +127,7 @@ export default {
         this.clickHandler(this.selected + 1)
       }
     },
-    prevPage (callback = false) {
+    prevPage (callback = true) {
       if (this.selected <= 0) return
 
       this.selected --
@@ -136,7 +136,7 @@ export default {
         this.clickHandler(this.selected + 1)
       }
     },
-    nextPage (callback = false) {
+    nextPage (callback = true) {
       if (this.selected >= this.pageCount - 1) return
 
       this.selected ++
